@@ -1,5 +1,6 @@
 name: DXPR Marketing CMS
 type: profile
+weight: 99
 distribution:
   name: DXPR Marketing CMS
   install:
