@@ -1,0 +1,23 @@
+uuid: 5b9e6b6a-5992-4222-be65-0a698177b85a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stable9
+_core:
+  default_config_hash: f3MZmLF1ycmFQ5IINNl9vmwhVH9Qz6cnYkXJJkQjgqo
+id: stable9_footer
+theme: stable9
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:5eca7429-4952-438e-b2f0-769f177aa5c7'
+settings:
+  id: 'block_content:5eca7429-4952-438e-b2f0-769f177aa5c7'
+  label: Footer
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

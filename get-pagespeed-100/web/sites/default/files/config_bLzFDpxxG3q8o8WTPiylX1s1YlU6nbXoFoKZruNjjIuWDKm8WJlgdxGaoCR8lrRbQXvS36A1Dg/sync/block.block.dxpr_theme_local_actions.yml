@@ -1,0 +1,26 @@
+uuid: bbe04be3-2032-4979-8ca9-b30a21e72d09
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dxpr_theme
+_core:
+  default_config_hash: abVyzaE6F3dnRUlI501JYkSdbmdyvmQ1QkqjoFahorA
+id: dxpr_theme_local_actions
+theme: dxpr_theme
+region: content
+weight: -30
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

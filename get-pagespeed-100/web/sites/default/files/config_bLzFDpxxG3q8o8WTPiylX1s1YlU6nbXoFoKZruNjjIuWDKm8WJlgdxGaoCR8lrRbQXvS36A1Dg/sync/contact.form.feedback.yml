@@ -1,0 +1,13 @@
+uuid: 5c607fab-46db-4001-a309-5a13f62454e2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nAsiwgdFuHL1HqRgmuld9XEOqvyFrnSiDd_0yESmPVA
+id: feedback
+label: 'Contact Us'
+recipients: {  }
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

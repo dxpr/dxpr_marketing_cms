@@ -1,0 +1,14 @@
+uuid: 208acc8c-9820-413e-b928-145d4c91235a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_bui
+  module:
+    - user
+id: user_add_role_action.site_bui
+label: 'Add the Site Builder role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: site_bui

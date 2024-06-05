@@ -1,0 +1,21 @@
+uuid: 54e8a5ef-aadf-40fe-96c9-b61f53494dc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt_google
+_core:
+  default_config_hash: UPD_VHBHHlFMfig4_1ShDuTMY-U_w9_NIJo32K2frDM
+name: google
+label: Google
+description: 'Google Translator service.'
+auto_accept: true
+weight: null
+plugin: google
+settings:
+  url: ''
+  api_key: ''
+remote_languages_mappings:
+  en: en
+  es: es
+  zh-hans: zh

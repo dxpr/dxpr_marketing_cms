@@ -1,0 +1,27 @@
+uuid: 133a7480-df26-4749-8b88-b04547ec2e87
+langcode: en
+status: false
+dependencies:
+  module:
+    - dxpr_builder
+    - system
+  theme:
+    - dxpr_gin
+id: licenseinfo
+theme: dxpr_gin
+region: header
+weight: 0
+provider: null
+plugin: license_info
+settings:
+  id: license_info
+  label: 'DXPR License info'
+  label_display: '0'
+  provider: dxpr_builder
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: |-
+      /admin/people
+      /admin/dxpr_studio/dxpr_builder/user_licenses
