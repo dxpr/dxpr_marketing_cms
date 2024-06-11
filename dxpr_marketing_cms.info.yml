@@ -10,6 +10,9 @@ version: VERSION
 install:
   - admin_toolbar
   - admin_toolbar_search
+  - advagg
+  - advagg_bundler
+  - advagg_css_minify
   - automated_cron
   - big_pipe
   - block
