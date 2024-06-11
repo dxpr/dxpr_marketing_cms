@@ -10,6 +10,13 @@ version: VERSION
 install:
   - admin_toolbar
   - admin_toolbar_search
+  - advagg
+  - advagg_bundler
+  - advagg_css_minify
+  - advagg_ext_minify
+  - advagg_js_minify
+  - advagg_mod
+  - advagg_validator
   - automated_cron
   - big_pipe
   - block
@@ -49,6 +56,7 @@ install:
   - menu_ui
   - metatag
   - metatag_hreflang
+  - minifyhtml
   - moderation_dashboard
   - node
   - options
