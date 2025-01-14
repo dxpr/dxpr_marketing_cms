@@ -34,7 +34,6 @@ install:
   - default_content
   - dxpr_builder
   - dxpr_builder_block
-  - dxpr_builder_media
   - dxpr_builder_page
   - dxpr_theme_helper
   - dynamic_page_cache
@@ -47,7 +46,6 @@ install:
   - help
   - history
   - image
-  - inline_entity_form
   - language
   - media
   - media_library
