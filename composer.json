@@ -14,7 +14,7 @@
   ],
   "require": {
     "drupal/admin_toolbar": "^3",
-    "drupal/advagg": "^6.0@alpha",
+    "drupal/advagg": "^6.0.0-alpha1",
     "drupal/block_classes": "^1.0",
     "drupal/bootstrap5": "^3 || ^4",
     "drupal/contact_block": "^2.0",
