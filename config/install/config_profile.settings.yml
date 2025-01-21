@@ -12,7 +12,6 @@ blacklist:
   - 'dblog.*'
   - 'devel.*'
   - 'editor.*'
-  - 'entity_browser.*'
   - 'field_ui.*'
   - 'field.field.block_content.*'
   - 'field.field.media.*'

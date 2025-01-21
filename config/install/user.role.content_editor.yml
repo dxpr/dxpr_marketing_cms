@@ -12,7 +12,6 @@ dependencies:
     - content_moderation
     - content_translation
     - dxpr_builder
-    - entity_browser
     - field_ui
     - file
     - media
@@ -31,7 +30,6 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access dxpr_builder_media_modal entity browser pages'
   - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'

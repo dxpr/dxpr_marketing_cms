@@ -38,7 +38,6 @@ install:
   - dxpr_theme_helper
   - dynamic_page_cache
   - editor
-  - entity_browser
   - field_group
   - field_ui
   - file
