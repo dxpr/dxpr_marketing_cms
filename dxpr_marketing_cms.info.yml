@@ -8,6 +8,7 @@ core_version_requirement: ^10
 description: 'Install with DXPR Builder pre-configured.'
 version: VERSION
 install:
+  - media_library_form_element
   - admin_toolbar
   - admin_toolbar_search
   - advagg
