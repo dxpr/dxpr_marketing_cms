@@ -22,7 +22,7 @@
     "drupal/default_content": "^2",
     "drupal/dxpr_builder": "^2.7.0-beta3",
     "drupal/dxpr_theme_helper": "^1",
-    "drupal/dxpr_theme": "^6",
+    "drupal/dxpr_theme": "^6.0.3",
     "drupal/field_group": "^3.4",
     "drupal/gin_login": "^2",
     "drupal/gin_toolbar": "^1",
@@ -43,5 +43,13 @@
       "drupal/core-dev": "^10",
       "drupal/devel": "^5.0.0",
       "drush/drush": "^12"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true,
+      "phpstan/extension-installer": true,
+      "tbachert/spi": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
