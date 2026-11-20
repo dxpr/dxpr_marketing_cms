@@ -55,6 +55,8 @@ jobs:
           composer create-project 'drupal/recommended-project:^12@beta' "$site" \
             --no-install --no-interaction --stability=beta
           cd "$site"
+          composer config minimum-stability dev
+          composer config prefer-stable true
           composer config repositories.pr path "$GITHUB_WORKSPACE"
           php -r '$file = "composer.json"; $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); $data["extra"]["installer-paths"] = json_decode($argv[1], true, 512, JSON_THROW_ON_ERROR) + $data["extra"]["installer-paths"]; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) . PHP_EOL);' '{"web/profiles/contrib/dxpr_marketing_cms": ["dxpr/dxpr_marketing_cms"]}'
           composer require 'dxpr/dxpr_marketing_cms:*@dev' --no-update
