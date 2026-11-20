@@ -5,8 +5,6 @@
  * Enables modules and site configuration for a dxpr_marketing_cms site installation.
  */
 
-use Drupal\contact\Entity\ContactForm;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\dxpr_marketing_cms\Form\ConfigureAPIKeysForm;
 use Drupal\dxpr_marketing_cms\Form\ConfigureMultilingualForm;
 use Drupal\language\Entity\ConfigurableLanguage;
@@ -16,14 +14,14 @@ use Drupal\language\Entity\ConfigurableLanguage;
  *
  * Allows the profile to alter the site configuration form.
  */
-// function dxpr_marketing_cms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
+// Function dxpr_marketing_cms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
 //   $form['#submit'][] = 'dxpr_marketing_cms_form_install_configure_submit';
-// }
+// }.
 
 /**
  * Submission handler to sync the contact.form.feedback recipient.
  */
-// function dxpr_marketing_cms_form_install_configure_submit($form, FormStateInterface $form_state) {
+// Function dxpr_marketing_cms_form_install_configure_submit($form, FormStateInterface $form_state) {
 //   $site_mail = $form_state->getValue('site_mail');
 //   ContactForm::load('feedback')->setRecipients([$site_mail])->trustData()->save();
 // }
@@ -33,7 +31,7 @@ use Drupal\language\Entity\ConfigurableLanguage;
  */
 function dxpr_marketing_cms_install_tasks(&$install_state) {
   $isMultilingual = (
-    isset($install_state['dxpr_marketing_cms']['enable_multilingual']) && 
+    isset($install_state['dxpr_marketing_cms']['enable_multilingual']) &&
     $install_state['dxpr_marketing_cms']['enable_multilingual']
   );
   $tasks = [
@@ -106,7 +104,8 @@ function dxpr_marketing_cms_module_install(array &$install_state) {
   $modules = [
     'default_content',
     'dxpr_marketing_cms_demo_content',
-    'gin_toolbar', // will complain about gin not being admin theme during install-time
+  // Will complain about gin not being admin theme during install-time.
+    'gin_toolbar',
   ];
 
   foreach ($modules as $module) {

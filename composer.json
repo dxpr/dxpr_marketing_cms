@@ -13,12 +13,15 @@
       }
   ],
   "require": {
+    "drupal/tour": "^3.0",
+    "drupal/history": "^1.0",
+    "drupal/contact": "^1.0",
     "drupal/admin_toolbar": "^3",
     "drupal/advagg": "^6.0.0-alpha1",
     "drupal/block_classes": "^1.0",
     "drupal/bootstrap5": "^3 || ^4",
     "drupal/contact_block": "^2.0",
-    "drupal/core": "^10.2.0",
+    "drupal/core": "^11.3 || ^12@beta",
     "drupal/default_content": "^2",
     "drupal/dxpr_builder": "^2.7.0-beta3 || ^3.0",
     "drupal/dxpr_theme_helper": "^1 || ^2 || ^3",
@@ -40,9 +43,9 @@
     "drupal/xmlsitemap": "^1.4"
   },
   "require-dev": {
-      "drupal/core-dev": "^10",
+      "drupal/core-dev": "^11.3 || ^12@beta",
       "drupal/devel": "^5.0.0",
-      "drush/drush": "^12"
+      "drush/drush": "^12 || ^13 || ^14@dev"
   },
   "config": {
     "allow-plugins": {

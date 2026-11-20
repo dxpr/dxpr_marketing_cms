@@ -67,11 +67,14 @@ class ConfigureAPIKeysForm extends FormBase implements ContainerInjectionInterfa
    * @param \Drupal\dxpr_builder\Service\DxprBuilderJWTDecoder $jwtDecoder
    *   Parsing DXPR JWT token.
    */
-  public function __construct($root, InfoParserInterface $info_parser,
-  TranslationInterface $translator,
-  FormHelper $form_helper,
-  ConfigFactoryInterface $config_factory,
-  DxprBuilderJWTDecoder $jwtDecoder) {
+  public function __construct(
+    $root,
+    InfoParserInterface $info_parser,
+    TranslationInterface $translator,
+    FormHelper $form_helper,
+    ConfigFactoryInterface $config_factory,
+    DxprBuilderJWTDecoder $jwtDecoder,
+  ) {
     $this->root = $root;
     $this->infoParser = $info_parser;
     $this->stringTranslation = $translator;
@@ -104,7 +107,7 @@ class ConfigureAPIKeysForm extends FormBase implements ContainerInjectionInterfa
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, array &$install_state = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?array &$install_state = NULL) {
     $form['#title'] = $this->t('API Keys Configuration');
 
     $form['json_web_token'] = [
@@ -113,17 +116,14 @@ class ConfigureAPIKeysForm extends FormBase implements ContainerInjectionInterfa
       '#description' => $this->t('Create a free account at <a href="https://dxpr.com/pricing" target="_blank">DXPR.com</a> and find your key in the <a href="https://app.dxpr.com/getting-started" target="_blank">Get Started dashboard</a>.'),
     ];
 
-
-    
-    // if (isset($install_state['dxpr_marketing_cms']['enable_multilingual']) && 
-    // $install_state['dxpr_marketing_cms']['enable_multilingual']) {
-      $form['google_translation_key'] = [
-        '#type' => 'textfield',
-        '#title' => $this->t('Google Cloud Translation API key (optional)'),
-        '#description' => $this->t('Get a key from <a href="https://console.cloud.google.com/marketplace/product/google/translate.googleapis.com" target="_blank">cloud.google.com</a>.'),
-      ];
+    // If (isset($install_state['dxpr_marketing_cms']['enable_multilingual']) &&
+    // $install_state['dxpr_marketing_cms']['enable_multilingual']) {.
+    $form['google_translation_key'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Google Cloud Translation API key (optional)'),
+      '#description' => $this->t('Get a key from <a href="https://console.cloud.google.com/marketplace/product/google/translate.googleapis.com" target="_blank">cloud.google.com</a>.'),
+    ];
     // }
-    
     $form['actions'] = [
       'continue' => [
         '#type' => 'submit',
@@ -132,7 +132,7 @@ class ConfigureAPIKeysForm extends FormBase implements ContainerInjectionInterfa
       ],
       '#type' => 'actions',
       '#weight' => 5,
-    ];    
+    ];
 
     return $form;
   }
@@ -170,6 +170,5 @@ class ConfigureAPIKeysForm extends FormBase implements ContainerInjectionInterfa
       }
     }
   }
-
 
 }

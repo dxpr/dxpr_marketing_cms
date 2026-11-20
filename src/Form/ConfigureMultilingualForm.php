@@ -92,8 +92,8 @@ class ConfigureMultilingualForm extends FormBase implements ContainerInjectionIn
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, array &$install_state = NULL) {
-    // Native language list building code taken from core install step
+  public function buildForm(array $form, FormStateInterface $form_state, ?array &$install_state = NULL) {
+    // Native language list building code taken from core install step.
     if (count($install_state['translations']) > 1) {
       $files = $install_state['translations'];
     }
@@ -137,13 +137,13 @@ class ConfigureMultilingualForm extends FormBase implements ContainerInjectionIn
     }
 
     $form['#title'] = $this->t('Multilingual configuration');
-    
+
     $form['enable_multilingual'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Enable multilingual'),
       '#default_value' => TRUE,
     ];
-    
+
     $form['multilingual_languages'] = [
       '#type' => 'select',
       '#title' => $this->t("Additional site languages"),
@@ -184,8 +184,7 @@ class ConfigureMultilingualForm extends FormBase implements ContainerInjectionIn
         ],
       ],
     ];
-    
-    
+
     $form['actions'] = [
       'continue' => [
         '#type' => 'submit',
@@ -194,7 +193,7 @@ class ConfigureMultilingualForm extends FormBase implements ContainerInjectionIn
       ],
       '#type' => 'actions',
       '#weight' => 5,
-    ];    
+    ];
 
     return $form;
   }
@@ -209,22 +208,22 @@ class ConfigureMultilingualForm extends FormBase implements ContainerInjectionIn
     $enable_multilingual = $form_state->getValue('enable_multilingual');
     if (isset($enable_multilingual)
         && $enable_multilingual == TRUE) {
-          $install_state['dxpr_marketing_cms']['enable_multilingual'] = TRUE;
+      $install_state['dxpr_marketing_cms']['enable_multilingual'] = TRUE;
 
-        // Get list of selected multilingual languages.
-        $multilingual_languages = $form_state->getValue('multilingual_languages');
-        if (isset($multilingual_languages)
+      // Get list of selected multilingual languages.
+      $multilingual_languages = $form_state->getValue('multilingual_languages');
+      if (isset($multilingual_languages)
             && is_array($multilingual_languages)
             && count($multilingual_languages) > 0) {
-          $multilingual_languages = array_filter($multilingual_languages);
-        }
-        else {
-          $multilingual_languages = [];
-        }
-        if ($form_state->getValue('multilingual_demo_content')) {
-          $multilingual_languages['es'] = 'es';
-        }
-        $install_state['dxpr_marketing_cms']['multilingual_languages'] = $multilingual_languages;
+        $multilingual_languages = array_filter($multilingual_languages);
+      }
+      else {
+        $multilingual_languages = [];
+      }
+      if ($form_state->getValue('multilingual_demo_content')) {
+        $multilingual_languages['es'] = 'es';
+      }
+      $install_state['dxpr_marketing_cms']['multilingual_languages'] = $multilingual_languages;
     }
     else {
       $install_state['dxpr_marketing_cms']['enable_multilingual'] = FALSE;

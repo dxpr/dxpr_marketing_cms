@@ -3,7 +3,7 @@ type: theme
 base theme: gin
 description: DXPR branded Gin theme
 package: DXPR
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^12
 libraries:
   - dxpr_gin/global
 regions:
