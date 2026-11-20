@@ -4,7 +4,7 @@ distribution:
   name: DXPR Marketing CMS
   install:
     theme: dxpr_claro
-core_version_requirement: ^10
+core_version_requirement: '^11.3 || ^12'
 description: 'Install with DXPR Builder pre-configured.'
 version: VERSION
 install:
